@@ -86,15 +86,13 @@ variable "cross_accounts_id" {
 }
 
 variable "recording_group" {
-  type        = "list"
+  type        = "map"
   description = "What type of resources Config must track, default to all resources"
 
-  default = [
-    {
-      all_supported                 = true
-      include_global_resource_types = true
-    },
-  ]
+  default = {
+    all_supported                 = true
+    include_global_resource_types = true
+  }
 }
 
 variable "delivery_frequency" {

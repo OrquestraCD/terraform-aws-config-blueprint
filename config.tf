@@ -1,7 +1,7 @@
 resource "aws_config_configuration_recorder" "this" {
   name            = "${var.name}"
   role_arn        = "${module.iam.role["arn"]}"
-  recording_group = "${var.recording_group}"
+  recording_group = ["${var.recording_group}"]
 }
 
 resource "aws_config_delivery_channel" "this" {
