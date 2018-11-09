@@ -84,3 +84,21 @@ variable "cross_accounts_id" {
   description = "A list of account ids to allow use the log bucket and KMS key to encrypt"
   default     = []
 }
+
+variable "recording_group" {
+  type        = "list"
+  description = "What type of resources Config must track, default to all resources"
+
+  default = [
+    {
+      all_supported                 = true
+      include_global_resource_types = true
+    },
+  ]
+}
+
+variable "delivery_frequency" {
+  type        = "string"
+  description = "The frequency with which AWS Config recurringly delivers configuration snapshots"
+  default     = "TwentyFour_Hours"
+}
