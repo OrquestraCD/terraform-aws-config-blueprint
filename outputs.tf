@@ -1,10 +1,6 @@
 output "settings" {
   description = "The AWS Config settings for the account"
-
-  value = {
-    recorder_id         = "${aws_config_configuration_recorder.this.id}"
-    delivery_channel_id = "${aws_config_delivery_channel.this.id}"
-  }
+  value       = "${module.config_us_east_1.settings}"
 }
 
 output "log_bucket" {
