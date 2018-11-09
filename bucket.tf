@@ -9,9 +9,5 @@ module "log_bucket" {
   server_side_encryption_algorithm = "${local.bucket_sse_algorithm}"
   logs_transitions                 = ["${var.bucket_logs_transitions}"]
   logs_expiration                  = "${var.bucket_logs_expiration}"
-
-  # extra_policy_statements = ["${concat(
-  #   local.default_policy_statements,
-  #   var.extra_bucket_policy_statements
-  # )}"]
+  extra_policy_statements          = ["${var.extra_bucket_policy_statements}"]
 }
