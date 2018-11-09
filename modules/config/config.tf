@@ -2,6 +2,8 @@ resource "aws_config_configuration_recorder" "this" {
   name            = "${var.name}"
   role_arn        = "${var.iam_role_arn}"
   recording_group = ["${var.recording_group}"]
+
+  count = "${var.enabled ? 1 : 0}"
 }
 
 resource "aws_config_delivery_channel" "this" {
@@ -13,6 +15,8 @@ resource "aws_config_delivery_channel" "this" {
   snapshot_delivery_properties = {
     delivery_frequency = "${var.delivery_frequency}"
   }
+
+  count = "${var.enabled ? 1 : 0}"
 }
 
 resource "aws_config_configuration_recorder_status" "this" {
@@ -20,4 +24,6 @@ resource "aws_config_configuration_recorder_status" "this" {
 
   name       = "${aws_config_configuration_recorder.this.name}"
   is_enabled = true
+
+  count = "${var.enabled ? 1 : 0}"
 }

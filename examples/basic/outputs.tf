@@ -1,4 +1,4 @@
-output "config" {
+output "settings" {
   value = "${module.config.settings}"
 }
 
