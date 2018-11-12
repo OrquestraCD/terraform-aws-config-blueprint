@@ -17,7 +17,7 @@ module "config_region_0" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_0", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_0", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -32,7 +32,7 @@ module "config_region_1" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_1", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_1", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -47,7 +47,7 @@ module "config_region_2" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_2", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_2", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -62,7 +62,7 @@ module "config_region_3" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_3", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_3", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -77,7 +77,7 @@ module "config_region_4" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_4", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_4", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -92,7 +92,7 @@ module "config_region_5" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_5", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_5", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -107,7 +107,7 @@ module "config_region_6" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_6", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_6", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -122,7 +122,7 @@ module "config_region_7" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_7", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_7", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -137,7 +137,7 @@ module "config_region_8" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_8", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_8", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -152,7 +152,7 @@ module "config_region_9" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_9", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_9", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -167,7 +167,7 @@ module "config_region_10" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_10", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_10", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -182,7 +182,7 @@ module "config_region_11" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_11", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_11", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -197,7 +197,7 @@ module "config_region_12" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_12", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_12", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
@@ -212,7 +212,7 @@ module "config_region_13" {
   }
 
   name               = "${var.name}"
-  enabled            = "${lookup(var.enable_extra_regions, "region_13", false)}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_13", false) : false}"
   iam_role_arn       = "${module.iam.role["arn"]}"
   recording_group    = "${var.recording_group}"
   delivery_frequency = "${var.delivery_frequency}"
