@@ -1,5 +1,5 @@
 locals {
-  name_prefix                      = "custom-bucket-config"
+  name_prefix                      = "custom-resources-config"
   name                             = "${local.name_prefix}-${local.common_tags["Environment"]}"
   bucket_name                      = "${local.name}"
   bucket_force_destroy             = true
