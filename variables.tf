@@ -85,16 +85,6 @@ variable "cross_accounts_id" {
   default     = []
 }
 
-variable "recording_group" {
-  type        = "map"
-  description = "What type of resources Config must track, default to all resources"
-
-  default = {
-    all_supported                 = true
-    include_global_resource_types = true
-  }
-}
-
 variable "delivery_frequency" {
   type        = "string"
   description = "The frequency with which AWS Config recurringly delivers configuration snapshots"
@@ -104,10 +94,7 @@ variable "delivery_frequency" {
 variable "enable_extra_regions" {
   type        = "map"
   description = "What extra regions you need to enable. Require setting providers correctly"
-
-  default = {
-    region_0 = false
-  }
+  default     = {}
 }
 
 variable "auto_create_iam_role" {
