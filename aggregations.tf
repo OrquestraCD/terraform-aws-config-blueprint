@@ -18,8 +18,9 @@ module "aggregations" {
     aws.region_13 = "aws.region_13"
   }
 
-  name                 = "${var.name}"
-  account_id           = "${data.aws_caller_identity.this.account_id}"
-  enabled              = "${var.enabled}"
-  enable_extra_regions = "${var.enable_extra_regions}"
+  name                   = "${var.name}"
+  account_id             = "${join("", data.aws_caller_identity.this.*.account_id)}"
+  enabled                = "${var.enabled}"
+  enable_extra_regions   = "${var.enable_extra_regions}"
+  auto_create_aggregator = "${var.auto_create_aggregator}"
 }

@@ -29,3 +29,7 @@ output "iam_role" {
   description = "The IAM role attributes associate with the Config"
   value       = "${module.iam.role}"
 }
+
+output "cross_account_bucket_policy_statements" {
+  value = "${local.cross_account_bucket_policy_statements}"
+}

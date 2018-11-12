@@ -79,9 +79,9 @@ variable "extra_bucket_policy_statements" {
   default     = []
 }
 
-variable "cross_accounts_id" {
+variable "cross_accounts_iam_roles_arn" {
   type        = "list"
-  description = "A list of account ids to allow use the log bucket and KMS key to encrypt"
+  description = "A list of external accounts IAM roles ARN to allow to use the log bucket to store config snapshots"
   default     = []
 }
 
@@ -107,4 +107,10 @@ variable "custom_iam_role_arn" {
   type        = "string"
   description = "A custom IAM Role ARN to attach to the Config Recorder. This parameter is ignored auto_create_iam_role is true"
   default     = ""
+}
+
+variable "auto_create_aggregator" {
+  type        = "string"
+  description = "If true create an aggregator for all regions on the same account on the main region"
+  default     = true
 }
