@@ -11,3 +11,8 @@ output "iam_role" {
   description = "The IAM role attributes associate with the Config"
   value       = "${module.config.iam_role}"
 }
+
+output "rules_arn" {
+  description = ""
+  value       = "${module.rules.rules_arn}"
+}
