@@ -14,11 +14,6 @@ variable "iam_role_arn" {
   description = "The IAM Role for the AWS Config to assume"
 }
 
-variable "recording_group" {
-  type        = "map"
-  description = "What type of resources Config must track"
-}
-
 variable "delivery_frequency" {
   type        = "string"
   description = "The frequency with which AWS Config recurringly delivers configuration snapshots"
@@ -27,4 +22,10 @@ variable "delivery_frequency" {
 variable "s3_bucket_name" {
   type        = "string"
   description = "The bucket name to store the configuration snapshots"
+}
+
+variable "include_global_resource_types" {
+  type        = "string"
+  description = "If global resources must be included on AWS Config"
+  default     = false
 }

@@ -1,7 +1,11 @@
 resource "aws_config_configuration_recorder" "this" {
-  name            = "${var.name}"
-  role_arn        = "${var.iam_role_arn}"
-  recording_group = ["${var.recording_group}"]
+  name     = "${var.name}"
+  role_arn = "${var.iam_role_arn}"
+
+  recording_group {
+    all_supported                 = true
+    include_global_resource_types = "${var.include_global_resource_types}"
+  }
 
   count = "${var.enabled ? 1 : 0}"
 }
