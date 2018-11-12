@@ -5,6 +5,7 @@ locals {
   bucket_force_destroy             = true
   server_side_encryption_algorithm = "AES256"
   auto_create_bucket               = false
+  auto_create_iam_role             = false
 
   common_tags = {
     Environment = "tst"

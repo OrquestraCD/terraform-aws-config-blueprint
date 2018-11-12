@@ -9,5 +9,5 @@ output "log_bucket" {
 
 output "iam_role" {
   description = "The IAM role attributes associate with the Config"
-  value       = "${module.config.iam_role}"
+  value       = "${module.iam.role}"
 }

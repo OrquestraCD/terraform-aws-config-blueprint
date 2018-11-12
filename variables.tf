@@ -109,3 +109,15 @@ variable "enable_extra_regions" {
     region_0 = false
   }
 }
+
+variable "auto_create_iam_role" {
+  type        = "string"
+  description = "If the IAM role and associated policies and attachments must be created"
+  default     = true
+}
+
+variable "custom_iam_role_arn" {
+  type        = "string"
+  description = "A custom IAM Role ARN to attach to the Config Recorder. This parameter is ignored auto_create_iam_role is true"
+  default     = ""
+}
