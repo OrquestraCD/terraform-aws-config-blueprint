@@ -1,9 +1,6 @@
 output "settings" {
   description = "The AWS Config settings for the account"
-
-  value = {
-    us_east_1 = "${module.config_us_east_1.settings}"
-  }
+  value       = "${module.config.settings}"
 }
 
 output "log_bucket" {

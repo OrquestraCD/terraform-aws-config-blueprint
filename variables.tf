@@ -100,3 +100,12 @@ variable "delivery_frequency" {
   description = "The frequency with which AWS Config recurringly delivers configuration snapshots"
   default     = "TwentyFour_Hours"
 }
+
+variable "enable_extra_regions" {
+  type        = "map"
+  description = "What extra regions you need to enable. Require setting providers correctly"
+
+  default = {
+    region_0 = false
+  }
+}
