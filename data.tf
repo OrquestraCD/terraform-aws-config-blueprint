@@ -12,6 +12,11 @@ locals {
   bucket_arn           = "arn:aws:s3:::${local.bucket_name}"
   custom_bucket_arn    = "arn:aws:s3:::${var.custom_bucket_name}"
 
+  cross_account_objects_arn = ["${formatlist(
+    "${var.auto_create_bucket ? local.bucket_arn : local.custom_bucket_arn}/AWSLogs/%s/*",
+    var.cross_accounts_id
+  )}"]
+
   cross_account_bucket_policy_statements = [
     {
       sid       = "AWSConfigCrossAccountBucketAcl"
@@ -30,7 +35,7 @@ locals {
       sid       = "AWSConfigCrossAccountWrite"
       effect    = "Allow"
       actions   = ["s3:PutObject"]
-      resources = ["${var.auto_create_bucket ? local.bucket_arn : local.custom_bucket_arn}/*"]
+      resources = ["${local.cross_account_objects_arn}"]
 
       principals = [
         {

@@ -79,9 +79,9 @@ variable "extra_bucket_policy_statements" {
   default     = []
 }
 
-variable "cross_accounts_iam_roles_arn" {
+variable "cross_accounts_id" {
   type        = "list"
-  description = "A list of external accounts IAM roles ARN to allow to use the log bucket to store config snapshots"
+  description = "A list of external accounts id to allow to use the log bucket to store config snapshots"
   default     = []
 }
 
