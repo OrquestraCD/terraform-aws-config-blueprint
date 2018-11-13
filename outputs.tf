@@ -17,6 +17,8 @@ output "settings" {
     region_11      = "${module.config_region_11.settings}"
     region_12      = "${module.config_region_12.settings}"
     region_13      = "${module.config_region_13.settings}"
+    region_14      = "${module.config_region_14.settings}"
+    region_15      = "${module.config_region_15.settings}"
   }
 }
 

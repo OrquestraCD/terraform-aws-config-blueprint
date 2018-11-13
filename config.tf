@@ -204,3 +204,31 @@ module "config_region_13" {
   delivery_frequency = "${var.delivery_frequency}"
   s3_bucket_name     = "${var.auto_create_bucket ? module.log_bucket.bucket["id"] : var.custom_bucket_name}"
 }
+
+module "config_region_14" {
+  source = "modules/config"
+
+  providers = {
+    aws = "aws.region_14"
+  }
+
+  name               = "${var.name}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_14", false) : false}"
+  iam_role_arn       = "${var.auto_create_iam_role ? module.iam.role["arn"] : var.custom_iam_role_arn}"
+  delivery_frequency = "${var.delivery_frequency}"
+  s3_bucket_name     = "${var.auto_create_bucket ? module.log_bucket.bucket["id"] : var.custom_bucket_name}"
+}
+
+module "config_region_15" {
+  source = "modules/config"
+
+  providers = {
+    aws = "aws.region_15"
+  }
+
+  name               = "${var.name}"
+  enabled            = "${var.enabled ? lookup(var.enable_extra_regions, "region_15", false) : false}"
+  iam_role_arn       = "${var.auto_create_iam_role ? module.iam.role["arn"] : var.custom_iam_role_arn}"
+  delivery_frequency = "${var.delivery_frequency}"
+  s3_bucket_name     = "${var.auto_create_bucket ? module.log_bucket.bucket["id"] : var.custom_bucket_name}"
+}

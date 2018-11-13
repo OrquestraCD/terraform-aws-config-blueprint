@@ -55,3 +55,11 @@ provider "aws" {
 provider "aws" {
   alias = "region_13"
 }
+
+provider "aws" {
+  alias = "region_14"
+}
+
+provider "aws" {
+  alias = "region_15"
+}

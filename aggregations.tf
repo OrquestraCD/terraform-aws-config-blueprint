@@ -16,6 +16,8 @@ module "aggregations" {
     aws.region_11 = "aws.region_11"
     aws.region_12 = "aws.region_12"
     aws.region_13 = "aws.region_13"
+    aws.region_14 = "aws.region_14"
+    aws.region_15 = "aws.region_15"
   }
 
   name                   = "${var.name}"

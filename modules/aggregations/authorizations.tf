@@ -95,3 +95,17 @@ resource "aws_config_aggregate_authorization" "this_region_13" {
 
   count = "${local.region_13_enabled}"
 }
+
+resource "aws_config_aggregate_authorization" "this_region_14" {
+  account_id = "${var.account_id}"
+  region     = "${data.aws_region.this_region_14.name}"
+
+  count = "${local.region_14_enabled}"
+}
+
+resource "aws_config_aggregate_authorization" "this_region_15" {
+  account_id = "${var.account_id}"
+  region     = "${data.aws_region.this_region_15.name}"
+
+  count = "${local.region_15_enabled}"
+}

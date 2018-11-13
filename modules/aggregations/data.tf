@@ -13,6 +13,8 @@ locals {
   region_11_enabled = "${var.enabled && lookup(var.enable_extra_regions, "region_11", false) ? 1 : 0}"
   region_12_enabled = "${var.enabled && lookup(var.enable_extra_regions, "region_12", false) ? 1 : 0}"
   region_13_enabled = "${var.enabled && lookup(var.enable_extra_regions, "region_13", false) ? 1 : 0}"
+  region_14_enabled = "${var.enabled && lookup(var.enable_extra_regions, "region_14", false) ? 1 : 0}"
+  region_15_enabled = "${var.enabled && lookup(var.enable_extra_regions, "region_15", false) ? 1 : 0}"
 }
 
 data "aws_region" "this_region_0" {
@@ -97,4 +99,16 @@ data "aws_region" "this_region_13" {
   provider = "aws.region_13"
 
   count = "${local.region_13_enabled}"
+}
+
+data "aws_region" "this_region_14" {
+  provider = "aws.region_14"
+
+  count = "${local.region_14_enabled}"
+}
+
+data "aws_region" "this_region_15" {
+  provider = "aws.region_15"
+
+  count = "${local.region_15_enabled}"
 }
