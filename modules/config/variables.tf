@@ -29,3 +29,9 @@ variable "include_global_resource_types" {
   description = "If global resources must be included on AWS Config"
   default     = false
 }
+
+variable "retention_period_in_days" {
+  type        = "string"
+  description = "The time AWS Config will retain config history"
+  default     = 365
+}

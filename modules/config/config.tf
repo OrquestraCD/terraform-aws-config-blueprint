@@ -31,3 +31,13 @@ resource "aws_config_configuration_recorder_status" "this" {
 
   count = "${var.enabled ? 1 : 0}"
 }
+
+resource "null_resource" "this_retention" {
+  depends_on = ["aws_config_configuration_recorder.this"]
+
+  provisioner "local-exec" {
+    command = "aws configservice --region '${data.aws_region.this_config_region.name}' put-retention-configuration --retention-period-in-days ${var.retention_period_in_days}"
+  }
+
+  count = "${var.enabled ? 1 : 0}"
+}

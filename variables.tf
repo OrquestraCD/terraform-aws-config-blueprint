@@ -91,6 +91,12 @@ variable "delivery_frequency" {
   default     = "TwentyFour_Hours"
 }
 
+variable "retention_period_in_days" {
+  type        = "string"
+  description = "The time AWS Config will retain config history"
+  default     = 365
+}
+
 variable "enable_extra_regions" {
   type        = "map"
   description = "What extra regions you need to enable. Require setting providers correctly"
